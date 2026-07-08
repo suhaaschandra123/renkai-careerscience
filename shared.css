@@ -1,0 +1,131 @@
+/* ============================================================
+   RENKAI — shared.css  |  Emergent-style layout
+   ============================================================ */
+
+:root {
+  --white:   #FFFFFF;
+  --off:     #FFF8F2;
+  --tint:    #FEF0E6;
+  --border:  #F0E5D8;
+  --text:    #111111;
+  --mid:     #4A4A4A;
+  --soft:    #888888;
+  --orange:  #E8600A;
+  --o2:      #F5873A;
+  --font:    system-ui, -apple-system, sans-serif;
+  --max:     1160px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font);
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3.5rem;
+  background: rgba(255,255,255,0.97);
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s;
+  backdrop-filter: blur(16px);
+}
+
+nav.up {
+  border-color: var(--border);
+  box-shadow: 0 2px 20px rgba(232,96,10,0.07);
+}
+
+.nav-logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-weight: 600;
+  color: var(--mid);
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+}
+
+.nav-cta {
+  background: var(--orange);
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+}
+
+/* HERO & SECTIONS */
+.hero {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding-top: 68px;
+}
+
+.section {
+  padding: 6.5rem 3.5rem;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+
+.btn-f {
+  background: var(--orange);
+  color: white;
+}
+
+.btn-f:hover {
+  background: var(--o2);
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  .hamburger { display: block; }
+  .section { padding: 4rem 1.5rem; }
+}
+
+@media (max-width: 600px) {
+  .section { padding: 3.5rem 1rem; }
+}
